@@ -11,13 +11,13 @@ let addresses = [
 	//当sub为空时启用本地优选域名/优选IP，若不带端口号 TLS默认端口为443，#号后为备注别名
 	'cf.090227.xyz:443#001',
 	'time.is#002',
-	'www.visa.com.sg',
-	'skk.moe#003',
-	'www.wto.org:8443',
-	'www.csgo.com:2087#004',
-	'icook.hk#004',
-	'104.17.152.41#005',
-	'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#006',
+	'www.visa.com.sg#003',
+	'skk.moe#004',
+	'www.wto.org:8443#005',
+	'www.csgo.com:2087#006',
+	'icook.hk#007',
+	'104.17.152.41#008',
+	'[2606:4700:e7:25:4b9:f8f8:9bfb:774a]#009',
 ];
 
 let sub = ''; 
