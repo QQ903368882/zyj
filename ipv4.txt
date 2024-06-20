@@ -1,3 +1,11 @@
 www.baipiao.eu.org
 icook.hk
 www.gov.se
+edgetunnel.anycast.eu.org
+cdn-all.xn--b6gac.eu.org
+cdn.xn--b6gac.eu.org
+cdn-b100.xn--b6gac.eu.org
+cdn.anycast.eu.org
+cdn-all.xijingping.link
+workers.cloudflare.cyou
+bestproxy.onecf.eu.org
