@@ -1,0 +1,18 @@
+URL：https://fofa.info/
+通过输入不同指令来搜索ip地址，搜索出的地址需要再次通过筛选工具进行处理
+fofa网站查询语法：
+/**
+*搜索服务器为CF，端口是443，http响应头部信息包含forbidden，国家是日本，城市是*东京的IP，这里国家和城市根据需要修改（US、JP、KR、CN 等等）
+*/
+server=="cloudflare" && port=="443" && country=="JP" && city=="Tokyo" 
+/** 
+*如果搜索的是反代IP，CF的IP要排除掉
+*/
+/*排除CF地址：*/ asn!="13335" && asn!="209242"
+/*甲骨文韩国：*/server=="cloudflare" && asn=="31898" && country=="KR"
+/*搬瓦工：*/server=="cloudflare" && asn=="25820"
+/**
+ *asn代表自治域编号感兴趣的朋友可通过下面连接查询
+ *自治域查询网址：http://ipblock.chacuo.net/
+ *以上代码来自于网络，感兴趣的朋友可自行研究修改使用
+*/
