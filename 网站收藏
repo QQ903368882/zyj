@@ -16,3 +16,50 @@ server=="cloudflare" && port=="443" && country=="JP" && city=="Tokyo"
  *自治域查询网址：http://ipblock.chacuo.net/
  *以上代码来自于网络，感兴趣的朋友可自行研究修改使用
 */
+CDN-IP及反代IP本地优选工具：
+Github：https://github.com/XIU2/CloudflareSpeedTest/
+//使用CloudflareSpeedTest优选IP需要手动操作
+//第一步打开命令行窗口
+cmd  //资源管理器中输入cmd打开命令行窗口后，回车，打开命令行窗口，输入下面命令
+type *.txt>>all.txt //将目录中所有txt文本内容合并到all.txt中，all.txt需要提起建立。
+
+/**
+* 第二步在命令行窗口中允许优选程序
+* 方式一：直接运行CloudflareST.exe
+*/
+CloudflareST.exe
+/**
+* 方式二：添加自定义参数
+* 1、自定义IP地址库
+*/
+CloudflareST.exe -f all.txt -o result-nrt.csv
+
+/**2、自定义区域，IP地址库，输出文件名*/
+CloudflareST.exe -httping -cfcolo NRT -f all.txt -o result-nrt.csv
+
+/**3、自定义-tl 平均延迟上线，-dn 下载测速数量*/
+CloudflareST.exe -httping -cfcolo NRT -tl 350 -dn 15 -f all.txt -o result-nrt.csv
+
+/**4、自定义 -url 测速地址*/
+CloudflareST.exe -url https://jp.cloudflarest.link -sl 3 -tl 350 -dn 15 -f ip.txt -o result.csv
+
+/*例子*/
+CloudflareST.exe -url https://pencilfiles.annonymus.cf/cloudflarest-200mb.rar  -httping -cfcolo NRT  -sl 3 -tl 300 -dn 15 -f ip.txt -o result-nrt.csv
+
+-httping -cfcolo NRT// 匹配指定地区；地区名为当地机场三字码，英文逗号分隔，支持小写
+-url https://pencilfiles.annonymus.cf/cloudflarest-200mb.rar //测速地址
+-sl 3      //下载速度下限；只输出高于指定下载速度的 IP
+-tl 300    //平均延迟上限；只输出低于指定平均延迟的 IP
+-dn 15     //下载测速数量；延迟测速并排序后，从最低延迟起下载测速的数量
+-f ip.txt  //IP段数据文件
+-o result-nrt.csv //写入结果文件；如路径含有空格请加上引号；值为空时不写入文件
+
+/*其他参数可参考作者网站：*/ https://github.com/XIU2/CloudflareSpeedTest/
+其中 NRT 是机场三字码：
+HKG（香港）KHH（台湾高雄市）NRT（日本国千叶县成田市）LAX（洛杉矶）SEA（东南亚）SJC（加利福尼亚州圣何塞）FRA（法国）MAD（马达加斯加）...
+/**
+* Cloudflare 所有节点（机场三字码）：https://www.cloudflarestatus.com/
+* 根据实际情况选择机场三字码
+* 如果下载速度为零，查看下是否关闭了代理，或者更换下载连接（-url后面部分）
+* 测速地址获取网址：https://github.com/XIU2/CloudflareSpeedTest/issues/168
+*/
