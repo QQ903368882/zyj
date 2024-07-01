@@ -66,3 +66,5 @@ HKG（香港）KHH（台湾高雄市）NRT（日本国千叶县成田市）LAX�
 9、合并文件命令
 9.1、资源管理器导航栏中输入 cmd 回车
 9.2、命令提示符中输入：type *.txt>>all.txt
+6、批量查询IP地区工具
+6.1、英文：https://reallyfreegeoip.org/bulk
