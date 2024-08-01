@@ -5,3 +5,10 @@
 154.92.9.245:443#日本
 162.159.44.180:443#波兰
 bob.zyj82.us.kg:2096#中国
+bob.zyj82.us.kg:443#中国
+bob.zyj83.us.kg:8443#中国
+bob.zyj84.us.kg:2053#中国
+bob.zyj85.us.kg:2083#中国
+bob.zyj86.us.kg:2087#中国
+bob.zyj87.us.kg:2096#中国
+bob.zyj88.us.kg:2097#中国
